@@ -1,0 +1,31 @@
+name: Conda
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: conda-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  conda:
+    name: All tests in the conda environment
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: mamba-org/setup-micromamba@v3
+        with:
+          environment-file: environment.yml
+          cache-environment: true
+      - name: All tests
+        run: make test
+      - name: Pipeline on the example data
+        run: make run

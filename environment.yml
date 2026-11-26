@@ -1,0 +1,21 @@
+# Conda environment for use without Docker.
+# It uses the nearest Bioconductor builds available on bioconda.
+# The Docker image is the reference environment with the versions stated in the manuscript.
+name: irbd-plasma-mirna
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.10
+  - pip
+  - make
+  - r-base=4.5
+  - bioconductor-deseq2=1.50.2
+  - bioconductor-apeglm=1.32.0
+  - bioconductor-edger
+  - r-yaml
+  - r-testthat
+  - pip:
+      - -r requirements.txt
+      - -r requirements-dev.txt
+      - -e .

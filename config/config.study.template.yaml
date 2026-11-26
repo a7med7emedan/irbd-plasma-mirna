@@ -1,0 +1,46 @@
+# Template for a run on the study data. Copy it, set the three input paths, then run:
+#   irbd-mirna run --config config/config.study.yaml --strict
+# Paths are relative to the directory from which the pipeline is started.
+
+inputs:
+  counts: /data/counts.tsv                # miRNA by library count matrix, tab-separated
+  samples: /data/samples.tsv              # sample sheet, tab-separated
+  clinical: null                          # optional clinical table
+
+output_dir: results/study
+
+# Values reported in the manuscript. The run compares its key numbers with them.
+manuscript_values: config/manuscript_values.yaml
+
+# Group labels as they appear in the sample sheet.
+groups:
+  irbd: iRBD
+  pd: de_novo_PD
+  hc_high_prs: HC_high_PRS
+  hc_low_prs: HC_low_PRS
+
+# Dysregulation rule.
+thresholds:
+  fdr: 0.05
+  abs_log2fc: 0.5
+
+deseq2:
+  covariates: [age, sex]
+  independent_filtering_alpha: 0.1
+  min_count: 10
+  min_samples: 3
+  prefilter:
+    hc_high_vs_low_prs: filterByExpr
+    irbd_vs_controls: filterByExpr
+    irbd_vs_pd: filterByExpr
+    pd_vs_controls: min_count
+
+converters:
+  min_detection_fraction: 0.2
+  min_detected_samples: 3
+  n_permutations: 200
+  seed: 20260830
+
+clinical:
+  continuous: []
+  categorical: []

@@ -1,0 +1,35 @@
+name: Docker
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: docker-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  docker:
+    name: Reference image
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Build the image and check the versions
+        run: make docker-build
+      - name: Lint and all tests inside the image
+        run: make docker-test
+      - name: Pipeline on the example data inside the image
+        run: make docker-run
+      - name: Check that the run wrote the key numbers
+        run: test -s results/example/summary/key_numbers.tsv
+      - name: Keep the key numbers and figures of the example run
+        uses: actions/upload-artifact@v6
+        with:
+          name: example-run
+          path: |
+            results/example/summary/
+            results/example/figures/

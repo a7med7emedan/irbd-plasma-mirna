@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the software and the manuscript."
+title: "irbd-plasma-mirna: statistical analysis of plasma microRNA sequencing in iRBD, de novo Parkinson's disease and healthy controls"
+type: software
+version: 1.0.0
+date-released: "2026-11-26"
+license: Apache-2.0
+repository-code: "https://github.com/a7med7emedan/irbd-plasma-mirna"
+authors:
+  - family-names: Hemedan
+    given-names: Ahmed
+    affiliation: "Luxembourg Institute of Health; Luxembourg Centre for Systems Biomedicine, University of Luxembourg"
+keywords:
+  - microRNA
+  - DESeq2
+  - REM sleep behaviour disorder
+  - Parkinson's disease
+  - biomarkers
+references:
+  - type: article
+    title: "Parkinson's Disease-Associated Brain-Enriched microRNAs Reveal Plasma State Biomarkers in Isolated REM Sleep Behaviour Disorder"
+    status: submitted
+    authors:
+      - family-names: Pavelka
+        given-names: Lukas
+      - family-names: Hemedan
+        given-names: Ahmed
+      - family-names: Landoulsi
+        given-names: Zied
+      - family-names: May
+        given-names: Patrick
+      - family-names: Glaab
+        given-names: Enrico
+      - family-names: Keller
+        given-names: Andreas
+      - family-names: Ludwig
+        given-names: Nicole
+      - family-names: Satagopam
+        given-names: Venkata
+      - family-names: Krüger
+        given-names: Rejko
+      - name: "NCER-PD Consortium"

@@ -1,0 +1,3 @@
+# Tools for linting and testing.
+pytest==8.4.2
+ruff==0.17.6

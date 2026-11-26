@@ -1,0 +1,106 @@
+# Values reported in the manuscript:
+# "Parkinson's Disease-Associated Brain-Enriched microRNAs Reveal Plasma State Biomarkers
+#  in Isolated REM Sleep Behaviour Disorder" (Pavelka, Hemedan et al.).
+#
+# A run on the study data compares each key number with the value below and writes the
+# result to summary/key_numbers.tsv. With --strict the run fails when a number differs.
+#
+# compare: exact  the pipeline value equals the reported value
+#          round  the pipeline value, rounded to `digits`, equals the reported value
+#          below  the pipeline value is smaller than the reported bound (reported as p < bound)
+#          text   the pipeline value equals the reported text
+
+# Sequencing and quality control (Methods)
+samples.sequenced: {value: 184}
+samples.analysed: {value: 165}
+samples.irbd: {value: 42}
+samples.pd: {value: 42}
+samples.hc_high_prs: {value: 43}
+samples.hc_low_prs: {value: 38}
+counts.percent_non_integer: {value: 0.5, compare: round, digits: 1}
+mirnas.annotated: {value: 2656}
+mirnas.detected_in_at_least_one: {value: 2023}
+mirnas.detected_in_at_least_half: {value: 762}
+reads.median_million: {value: 7.9, compare: round, digits: 1}
+reads.min_million: {value: 3.1, compare: round, digits: 1}
+reads.max_million: {value: 29.8, compare: round, digits: 1}
+
+# Differential expression (Results; Statistical analysis)
+de.hc_high_vs_low_prs.dysregulated: {value: 0}
+de.hc_high_vs_low_prs.smallest_padj: {value: 0.07, compare: round, digits: 2}
+de.irbd_vs_controls.tested: {value: 666}
+de.irbd_vs_controls.dysregulated: {value: 250}
+de.irbd_vs_controls.up: {value: 130}
+de.irbd_vs_controls.down: {value: 120}
+de.irbd_vs_pd.tested: {value: 578}
+de.irbd_vs_pd.dysregulated: {value: 161}
+de.irbd_vs_pd.up: {value: 69}
+de.irbd_vs_pd.down: {value: 92}
+de.pd_vs_controls.tested: {value: 1048}
+de.pd_vs_controls.dysregulated: {value: 9}
+de.pd_vs_controls.up: {value: 9}
+de.pd_vs_controls.down: {value: 0}
+
+# Brain-enriched panel (Results)
+panel.size: {value: 30}
+panel.irbd_vs_controls.tested: {value: 27}
+panel.irbd_vs_controls.dysregulated: {value: 17}
+panel.irbd_vs_pd.tested: {value: 25}
+panel.irbd_vs_pd.dysregulated: {value: 14}
+panel.pd_vs_controls.dysregulated: {value: 0}
+panel.shared: {value: 14}
+panel.shared_concordant: {value: 14}
+panel.shared_in_cluster: {value: 12}
+
+# 14q32 cluster (Results, chromosomal localisation)
+cluster.genes_forward_strand: {value: 53}
+cluster.mature_forward_strand: {value: 93}
+cluster.irbd_vs_controls.tested: {value: 57}
+cluster.irbd_vs_controls.down: {value: 54}
+cluster.irbd_vs_pd.tested: {value: 47}
+cluster.irbd_vs_pd.down: {value: 41}
+cluster.pd_vs_controls.tested: {value: 78}
+cluster.pd_vs_controls.dysregulated: {value: 0}
+domain.mir1247_5p.irbd_vs_controls.log2fc: {value: 0.25, compare: round, digits: 2}
+domain.mir1247_5p.irbd_vs_controls.padj: {value: 0.54, compare: round, digits: 2}
+domain.mir1247_5p.pd_vs_controls.log2fc: {value: -0.08, compare: round, digits: 2}
+domain.mir1247_5p.pd_vs_controls.padj: {value: 0.95, compare: round, digits: 2}
+domain.mir1247_5p.irbd_vs_pd.log2fc: {value: not tested, compare: text}
+
+# Haemolysis index and cluster score (Results)
+haemolysis.p.irbd_vs_controls: {value: 0.007, compare: round, digits: 3}
+haemolysis.p.irbd_vs_pd: {value: 0.001, compare: below}
+haemolysis.p.pd_vs_controls: {value: 0.90, compare: round, digits: 2}
+haemolysis.rho.controls: {value: -0.63, compare: round, digits: 2}
+haemolysis.rho.pd: {value: -0.53, compare: round, digits: 2}
+haemolysis.rho.irbd: {value: -0.45, compare: round, digits: 2}
+score.percent_reduction_haemolysis: {value: 32, compare: round, digits: 0}
+score.p_adjusted_haemolysis: {value: 0.001, compare: below}
+score.p_irbd_vs_hc_high_prs: {value: 0.001, compare: below}
+score.p_irbd_vs_hc_low_prs: {value: 0.001, compare: round, digits: 3}
+score.age_rho_controls: {value: -0.04, compare: round, digits: 2}
+score.age_p_controls: {value: 0.73, compare: round, digits: 2}
+
+# Converters within iRBD (Results; Statistical analysis; Supplementary Figure S2)
+converters.n_converters: {value: 8}
+converters.n_non_converters: {value: 34}
+converters.tested: {value: 1084}
+converters.dysregulated: {value: 0}
+converters.panel_detected: {value: 29}
+converters.size_factor_ratio: {value: 1.8, compare: round, digits: 1}
+converters.n_permutations: {value: 200}
+converters.permutations_with_calls: {value: 7}
+
+# Batch-effect analysis (Supplementary Figure S3)
+batch.smallest_batch_n: {value: 17}
+batch.largest_batch_n: {value: 148}
+batch.chi2_p: {value: 0.86, compare: round, digits: 2}
+batch.cramers_v: {value: 0.07, compare: round, digits: 2}
+batch.pc1.p_group: {value: 0.001, compare: below}
+batch.pc1.p_batch: {value: 0.27, compare: round, digits: 2}
+batch.pc2.p_group: {value: 0.01, compare: round, digits: 2}
+batch.pc2.p_batch: {value: 0.04, compare: round, digits: 2}
+batch.mirnas_tested: {value: 762}
+batch.mirnas_associated: {value: 0}
+batch.nominal_p_below_0.05: {value: 93}
+batch.nominal_expected: {value: 38}

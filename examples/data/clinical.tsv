@@ -1,0 +1,49 @@
+library_id	group	moca	disease_duration_years	cardiovascular_disease
+LIB001	iRBD		5.2	no
+LIB002	iRBD	28.0	1.0	no
+LIB003	iRBD	23.0	8.9	no
+LIB004	iRBD	27.0	3.9	no
+LIB005	iRBD	22.0	1.3	no
+LIB006	iRBD	23.0	0.9	no
+LIB007	iRBD	24.0	5.6	no
+LIB008	iRBD	29.0	1.7	no
+LIB009	iRBD	30.0	1.6	no
+LIB010	iRBD		2.5	no
+LIB011	iRBD		1.8	no
+LIB012	iRBD	26.0	4.2	no
+LIB013	iRBD	26.0	3.3	yes
+LIB014	iRBD	23.0	8.5	no
+LIB015	de_novo_PD	28.0	3.0	yes
+LIB016	de_novo_PD		2.1	yes
+LIB017	de_novo_PD	22.0	1.8	no
+LIB018	de_novo_PD	32.0	2.0	no
+LIB019	de_novo_PD	24.0	3.8	no
+LIB020	de_novo_PD	23.0	2.0	no
+LIB021	de_novo_PD	28.0	1.0	yes
+LIB022	de_novo_PD	23.0	2.7	no
+LIB023	de_novo_PD	31.0	1.5	yes
+LIB024	de_novo_PD	28.0	1.4	no
+LIB025	de_novo_PD	26.0	1.9	no
+LIB026	de_novo_PD	27.0	3.9	no
+LIB027	de_novo_PD	26.0	0.7	yes
+LIB028	de_novo_PD	24.0	4.7	no
+LIB029	HC_high_PRS	25.0		yes
+LIB030	HC_high_PRS	29.0		no
+LIB031	HC_high_PRS	26.0		no
+LIB032	HC_high_PRS	24.0		no
+LIB033	HC_high_PRS	26.0		yes
+LIB034	HC_high_PRS	22.0		no
+LIB035	HC_high_PRS	25.0		no
+LIB036	HC_high_PRS	29.0		yes
+LIB037	HC_high_PRS	26.0		no
+LIB038	HC_high_PRS	28.0		no
+LIB039	HC_low_PRS	23.0		yes
+LIB040	HC_low_PRS	24.0		no
+LIB041	HC_low_PRS	26.0		no
+LIB042	HC_low_PRS	21.0		no
+LIB043	HC_low_PRS	24.0		yes
+LIB044	HC_low_PRS	28.0		no
+LIB045	HC_low_PRS	26.0		no
+LIB046	HC_low_PRS	25.0		no
+LIB047	HC_low_PRS			no
+LIB048	HC_low_PRS	29.0		no
